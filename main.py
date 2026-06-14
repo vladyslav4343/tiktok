@@ -563,17 +563,19 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         record_new_user(user.id, username=user.username, first_name=user.first_name)
 
     keyboard = [
-        [InlineKeyboardButton("Get referral link", callback_data="get_link")]
+        [InlineKeyboardButton("Получить реферальную ссылку", callback_data="get_link")]
     ]
     manager_url = get_manager_url()
     if manager_url:
-        keyboard.append([InlineKeyboardButton("Telegram Channel", url=channel_url)])
+        keyboard.append([InlineKeyboardButton("Телеграм канал", url=channel_url)])
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     welcome_text = (
-        f"Hello {user.first_name}.\n\n"
-        "You are recorded in the referral table. Use the button below when you need "
-        "your personal referral link. For payment or questions, write to the manager directly."
+        f"👋 Привет, {user.first_name}!\n\n"
+        "Добро пожаловать! 🛍️\n\n"
+        "Загляни в наш канал — там всегда свежий ассортимент, новинки и необычные акции 🍃.\n\n"
+        "Если ты с нами как флоуер — жми «Получить ссылку» для своей "
+        "персональной реферальной ссылки 🔗"
     )
 
     await update.message.reply_text(welcome_text, reply_markup=reply_markup)
