@@ -570,7 +570,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard.append([InlineKeyboardButton("Телеграм канал", url=channel_url)])
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-   welcome_text = (
+    welcome_text = (
         f"👋 Привет, {user.first_name}!\n\n"
         "Добро пожаловать! 🛍️\n\n"
         "Загляни в наш канал — там всегда свежий ассортимент, новинки и необычные акции 🍃.\n\n"
