@@ -591,9 +591,8 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         log_content_post(user.id, "link_share")
 
         msg = (
-            f"Here is your unique referral link:\n\n<code>{ref_link}</code>\n\n"
-            "Share this on TikTok or Instagram. When people join via this link, "
-            "the system will add them to the table automatically."
+            f"Вот ваша уникальная реферальная ссылка:\n\n<code>{ref_link}</code>\n\n"
+            "Поделитесь ею в TikTok или Instagram. Когда люди присоединятся по этой ссылке, система автоматически добавит их в таблицу."
         )
         await query.edit_message_text(text=msg, parse_mode='HTML')
 
